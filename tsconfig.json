@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "outDir": "lib/",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "sourceMap": false,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "es2015",
+    "lib": ["es2016", "dom"],
+    "types": [],
+    "baseUrl": "./src/",
+    "importsNotUsedAsValues": "preserve",
+    "plugins": [],
+  },
+  "include": ["./src/*.mts"],
+  "exclude": ["lib"]
+}

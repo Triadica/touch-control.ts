@@ -1,0 +1,15 @@
+.editorconfig
+.gitattributes
+.gitignore
+.prettierrc
+dist
+tsconfig.json
+yarn.lock
+
+nim/
+.vscode/
+.github/
+
+lib/bundle.js
+src
+assets/
