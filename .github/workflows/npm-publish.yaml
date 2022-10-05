@@ -16,9 +16,6 @@ jobs:
 
       - run: yarn && yarn tsc -d
 
-      - run: node lib/main.mjs
-        name: run in Node tests
-
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
