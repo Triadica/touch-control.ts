@@ -1,10 +1,11 @@
 {
   "name": "@triadica/touch-control",
-  "version": "0.0.1-a1",
+  "version": "0.0.1-a2",
   "main": "./lib/touch-control.mjs",
   "scripts": {},
   "devDependencies": {
     "prettier": "^2.6.0",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.2",
+    "vite": "^3.1.4"
   }
 }

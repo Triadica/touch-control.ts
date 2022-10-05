@@ -6,3 +6,5 @@ nim/
 .vscode/
 
 js-out/
+
+dist/

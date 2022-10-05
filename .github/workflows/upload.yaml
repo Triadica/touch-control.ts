@@ -30,20 +30,20 @@ jobs:
 
       - run: yarn && yarn tsc
 
-      # - run: cp assets/index.html lib/
-      #   name: Build web assets
+      - run: yarn vite build --base=./
+        name: Build web assets
 
-      # - name: Deploy to server
-      #   id: deploy
-      #   uses: Pendect/action-rsyncer@v1.1.0
-      #   env:
-      #     DEPLOY_KEY: ${{secrets.rsync_private_key}}
-      #   with:
-      #     flags: "-avzr --progress"
-      #     options: ""
-      #     ssh_options: ""
-      #     src: "lib/*"
-      #     dest: "rsync-user@tiye.me:/web-assets/repo/${{ github.repository }}"
+      - name: Deploy to server
+        id: deploy
+        uses: Pendect/action-rsyncer@v1.1.0
+        env:
+          DEPLOY_KEY: ${{secrets.rsync_private_key}}
+        with:
+          flags: "-avzr --progress"
+          options: ""
+          ssh_options: ""
+          src: "lib/*"
+          dest: "rsync-user@tiye.me:/web-assets/repo/${{ github.repository }}"
 
-      # - name: Display status from deploy
-      #   run: echo "${{ steps.deploy.outputs.status }}"
+      - name: Display status from deploy
+        run: echo "${{ steps.deploy.outputs.status }}"
