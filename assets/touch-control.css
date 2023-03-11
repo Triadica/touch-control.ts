@@ -85,6 +85,27 @@ body {
   bottom: -160px;
 }
 
+@media only screen and (max-width: 600px) {
+  .touch-control .left-hand {
+    left: 44px;
+    bottom: -160px;
+  }
+  .touch-control .right-hand {
+    right: 44px;
+    bottom: -160px;
+  }
+}
+
+@media only screen and (max-height: 400px) {
+  .left-group, .right-group {
+    bottom: 140px;
+  }
+  .touch-control .left-hand,
+  .touch-control .right-hand {
+    bottom: -100px;
+  }
+}
+
 .left-hand .hand-center {
   border-width: 2px 1px 1px 1px;
 }
