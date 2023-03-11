@@ -8,6 +8,10 @@ body {
   overflow: hidden;
 }
 
+.touch-control {
+  user-select: none;
+  -webkit-user-select: none; /* Chrome, Opera and Safari*/
+}
 
 /* relative containers  */
 .left-group {
