@@ -8,6 +8,10 @@ body {
   overflow: hidden;
 }
 
+.touch-control {
+  user-select: none;
+  -webkit-user-select: none; /* Chrome, Opera and Safari*/
+}
 
 /* relative containers  */
 .left-group {
@@ -79,6 +83,27 @@ body {
 .touch-control .right-hand {
   right: 104px;
   bottom: -160px;
+}
+
+@media only screen and (max-width: 600px) {
+  .touch-control .left-hand {
+    left: 44px;
+    bottom: -160px;
+  }
+  .touch-control .right-hand {
+    right: 44px;
+    bottom: -160px;
+  }
+}
+
+@media only screen and (max-height: 400px) {
+  .left-group, .right-group {
+    bottom: 140px;
+  }
+  .touch-control .left-hand,
+  .touch-control .right-hand {
+    bottom: -100px;
+  }
 }
 
 .left-hand .hand-center {

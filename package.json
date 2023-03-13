@@ -1,6 +1,6 @@
 {
   "name": "@triadica/touch-control",
-  "version": "0.0.1-a3",
+  "version": "0.0.2",
   "main": "./lib/touch-control.mjs",
   "scripts": {},
   "devDependencies": {
