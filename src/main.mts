@@ -1,4 +1,4 @@
-import { ControlStates, renderControl, startControlLoop } from "./touch-control.mjs";
+import { type ControlStates, renderControl, startControlLoop } from "./index.mjs";
 
 let showData = (elapsed: number, states: ControlStates, delta: ControlStates) => {
   console.log("showing", elapsed, states.leftMove, states.rightMove, states.leftA, states.rightA);
