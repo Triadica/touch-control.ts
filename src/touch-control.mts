@@ -1,5 +1,5 @@
 import { Atom } from "./atom.mjs";
-import { V2 } from "./primes.mjs";
+import { type V2 } from "./primes.mjs";
 
 /** element data for building DOM */
 class MarkupElement {

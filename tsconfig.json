@@ -13,7 +13,7 @@
     "lib": ["es2016", "dom"],
     "types": [],
     "baseUrl": "./src/",
-    "importsNotUsedAsValues": "preserve",
+    "verbatimModuleSyntax": true,
     "plugins": [],
   },
   "include": ["./src/*.mts"],
