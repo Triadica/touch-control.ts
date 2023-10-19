@@ -191,9 +191,9 @@ let renderDom = (el: MarkupElement, parent: HTMLElement) => {
   return div;
 };
 
-export let replaceControlLoop = (duration: number, f: (elapsed: number, states: any, g: any) => void) => {
+export let replaceControlLoop = (duration: number, f: (elapsed: number, states: any, g: any) => void, options?: { disableRaf: boolean }) => {
   clearControlLoop();
-  startControlLoop(duration, f);
+  startControlLoop(duration, f, options);
 };
 
 /** control events data emitted from touches */
@@ -248,7 +248,13 @@ let rightEvents = (() => {
   };
 })();
 
-export let startControlLoop = (duration: number, f: (elapsed: number, states: ControlStates, g: any) => void) => {
+export let startControlLoop = (
+  duration: number,
+  f: (elapsed: number, states: ControlStates, g: any) => void,
+  options?: {
+    disableRaf: boolean;
+  }
+) => {
   let now = performance.now();
   let elapsed = (now - atomLastTick.deref()) / 1000;
   let shift = atomShiftListener.deref();
@@ -274,11 +280,15 @@ export let startControlLoop = (duration: number, f: (elapsed: number, states: Co
   }
   atomTimeoutLoop.reset(
     setTimeout(() => {
-      atomRaqLoop.reset(
-        requestAnimationFrame(() => {
-          startControlLoop(duration, f);
-        })
-      );
+      if (options?.disableRaf) {
+        startControlLoop(duration, f, options);
+      } else {
+        atomRaqLoop.reset(
+          requestAnimationFrame(() => {
+            startControlLoop(duration, f, options);
+          })
+        );
+      }
     }, duration)
   );
 };
